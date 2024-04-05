@@ -1,0 +1,27 @@
+ define("ITdsFileImportModule", ["BaseSchemaModuleV2"], function() {
+	/**
+	 * @class BPMSoft.configuration.FileImportModule
+	 * Class FileImportModule is designed to import files.
+	 */
+	Ext.define("BPMSoft.configurationITdsFileImportModule", {
+		extend: "BPMSoft.BaseSchemaModule",
+		alternateClassName: "BPMSoft.ITdsFileImportModule",
+
+		//region Methods: Protected
+
+		/**
+		 * @inheritdoc
+		 * @overridden
+		 */
+		initSchemaName: function() {
+			this.callParent(arguments);
+			if (this.Ext.isEmpty(this.schemaName)) {
+				this.schemaName = "ITdsFileImportStartPage";
+			}
+		}
+
+		//endregion
+
+	});
+	return BPMSoft.ITdsFileImportModule;
+});
